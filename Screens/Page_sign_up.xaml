@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final_project.Screens.Page_sign_up"
+             Title="Registrar">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Source="background.svg" Aspect="AspectFill" Grid.RowSpan="3"/>
+
+        <StackLayout Grid.Row="0" WidthRequest="300" VerticalOptions="Start" HorizontalOptions="Center" Margin="25,25">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="logo.svg" Grid.Column="0" HeightRequest="100"/>
+                <Label Text="Star Bank" TextColor="White" Grid.Column="1" FontSize="Large" Margin="20,35,0,20" />
+            </Grid>
+        </StackLayout>
+
+        <Border Grid.Row="1" Margin="30,0,30,0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12"/>
+            </Border.StrokeShape>
+            <StackLayout WidthRequest="300" VerticalOptions="Start" HorizontalOptions="Center" Margin="25,25" Padding="25,0">
+                <Border Margin="0,0,0,15" Padding="20,0,0,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+                    <Entry x:Name="txt_names" MaxLength="100" Placeholder="Nombres" WidthRequest="250"/>
+                </Border>
+
+                <Border Padding="20,0,0,0" Margin="0,0,0,15">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Entry x:Name="txt_surnames" MaxLength="100" Placeholder="Apellidos" WidthRequest="250"/>
+                </Border>
+
+                <Border Padding="20,0,0,0" Margin="0,0,0,15">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <DatePicker x:Name="dp_birthdate" Format="yyyy-MM-dd"></DatePicker>
+                </Border>
+
+                <Border Padding="20,0,0,0" Margin="0,0,0,15">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Entry x:Name="txt_dni" Keyboard="Numeric" MaxLength="13" Placeholder="DNI" WidthRequest="250"/>
+                </Border>
+
+                <Border Padding="20,0,0,0" Margin="0,0,0,15">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Entry x:Name="txt_email" MaxLength="100" Keyboard="Email" Placeholder="Correo electronico" WidthRequest="250"/>
+                </Border>
+
+                <Border Padding="20,0,0,0" Margin="0,0,0,15">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <Entry x:Name="txt_password" MaxLength="100" Placeholder="Contraseña" WidthRequest="250" IsPassword="True" />
+                </Border>
+
+                <Button Text="Registrarse" Clicked="insert_user" WidthRequest="250"/>
+            </StackLayout>
+        </Border>
+    </Grid>
+
+</ContentPage>
